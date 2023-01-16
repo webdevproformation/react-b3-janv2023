@@ -68,3 +68,18 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+.container{
+  width: 900px;
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:10px;
+}
+.container > * {
+  border:1px solid black;
+  border-radius:  5px;
+  padding: 5px;
+}

@@ -8,8 +8,10 @@ import Quatrieme from "./composants/Quatrieme";
 import Exo4 from "./composants/Exo4";
 
 function App(){
-  return <div>
-      Hello World !! 
+  return <div className="container">
+      <div>
+        Hello World !! 
+      </div>
       {/*Premier()*/}
       <Premier />
       <Exo1 />

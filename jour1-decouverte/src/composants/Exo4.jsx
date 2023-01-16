@@ -5,7 +5,7 @@ const Exo4 = () => {
         { id : 3 , nom : "Nissan" , modele : "Qashqai" , prix : 12000},
     ]
     return ( 
-    <> {/** fragment */}
+    <div> {/** fragment */}
         <h1>exo 4</h1>
         <ul>
             { vehicules.map(function(voiture){
@@ -15,7 +15,7 @@ const Exo4 = () => {
                 </li>
             } ) }
         </ul>
-    </> );
+    </div> );
 }
  
 export default Exo4;
