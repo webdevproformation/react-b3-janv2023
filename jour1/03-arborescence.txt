@@ -84,3 +84,13 @@ exécuter le composant Exo1 dans le composant racine App.jsx
  <li>Céline maitrise le react avec un niveau 5</li>
 </ul>
 exécuter ce composant dans App 
+
+
+// dans un composant 
+// <div></div>
+// <p></p> => Erreur 
+
+dans un composant vous devez avoir une seule balise qui contient toutes les autres 
+
+ <>
+ </> Fragment 
