@@ -8,6 +8,7 @@ import Quatrieme from "./composants/Quatrieme";
 import Exo4 from "./composants/Exo4";
 import Cinquieme from "./composants/Cinquieme";
 import Exo5 from "./composants/Exo5";
+import Sixieme from "./composants/Sixieme";
 
 function App(){
   return <div className="container">
@@ -25,6 +26,7 @@ function App(){
       <Exo4 />
       <Cinquieme />
       <Exo5 />
+      <Sixieme />
     </div>
 }
 
