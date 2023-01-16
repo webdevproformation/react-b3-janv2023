@@ -9,7 +9,7 @@ const Exo4 = () => {
         <h1>exo 4</h1>
         <ul>
             { vehicules.map(function(voiture){
-                return <li>
+                return <li key={voiture.id}>
                     le {voiture.nom} {voiture.modele} coûte &nbsp;
                     { new Intl.NumberFormat("fr-FR", { style: 'currency', currency: 'EUR' }).format(voiture.prix)}
                 </li>

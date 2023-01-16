@@ -127,3 +127,24 @@ afficher dans la vue du composant le jsx suivant
     <li> le Tesla S coûte 20 000 € TTC </li>
     <li> le Nissan Qashqai coûte 12 000 € TTC </li>
 </ul>
+let toto = 10
+if(i == 1){
+    toto = 12
+}
+console.log(toto)
+
+// créer le composant Exo5
+
+vehicules = [
+    { id : 1 , nom : "Renault" , modele : 208 , prix : 15000 , enStock : true },
+    { id : 2 , nom : "Tesla" , modele : "S" , prix : 20000 , enStock : false },
+    { id : 3 , nom : "Nissan" , modele : "Qashqai" , prix : 12000 , enStock : true },
+]
+
+afficher dans la vue du composant le jsx suivant  uniquement les voitures en stock
+
+<h1>exo 5</h1>
+<ul>
+    <li> le Renault 208 coûte 15 000 € TTC </li>
+    <li> le Nissan Qashqai coûte 12 000 € TTC </li>
+</ul>

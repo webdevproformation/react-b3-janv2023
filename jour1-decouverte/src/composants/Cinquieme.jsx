@@ -6,6 +6,8 @@ const Cinquieme = () => {
         isAdmin : true ,
         specialite : `Javascript`
     }
+
+    //var user = 10 ;
     // 
     const verification = () => {
         if(user.age < 10){
