@@ -69,3 +69,18 @@ dans la partie return
     <p> il vit dans la rue 75 rue de Paris
 </div>
 exécuter le composant Exo1 dans le composant racine App.jsx 
+
+-----
+ créer le composant Exo2 sous forme de class 
+
+ cette class contient 2 propriétés 
+ competences = ["js", "node", "angular" , "react"]
+ niveau = [1 ,5 ,10 , 2]
+
+ dans la méthode render de la class retourner le jsx suivant 
+
+<ul>
+ <li>Alain maitrise le js avec un niveau 10</li>
+ <li>Céline maitrise le react avec un niveau 5</li>
+</ul>
+exécuter ce composant dans App 
