@@ -94,3 +94,19 @@ dans un composant vous devez avoir une seule balise qui contient toutes les autr
 
  <>
  </> Fragment 
+
+ // créer le composant Exo3 fonctionnel
+
+ dans ce composant il ya 2 variables 
+
+ const aujourdhui = new Date()
+ const montant = 6230 ;
+
+ dans la partie vue du composant (return )
+ <div>
+    <p> 16/01/2023</p>
+    <p> 16 Janvier 2023 </p>
+    <p> le prix est 6 230,00 euros <p>
+ </div>
+
+
