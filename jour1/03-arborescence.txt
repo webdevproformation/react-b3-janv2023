@@ -110,3 +110,20 @@ dans un composant vous devez avoir une seule balise qui contient toutes les autr
  </div>
 
 
+// créer un composant Exo4 
+contient la variable suivante 
+
+vehicules = [
+    { id : 1 , nom : "Renault" , modele : 208 , prix : 15000 },
+    { id : 2 , nom : "Tesla" , modele : "S" , prix : 20000 },
+    { id : 3 , nom : "Nissan" , modele : "Qashqai" , prix : 12000 },
+]
+
+afficher dans la vue du composant le jsx suivant 
+
+<h1>exo 4</h1>
+<ul>
+    <li> le Renault 208 coûte 15 000 € TTC </li>
+    <li> le Tesla S coûte 20 000 € TTC </li>
+    <li> le Nissan Qashqai coûte 12 000 € TTC </li>
+</ul>

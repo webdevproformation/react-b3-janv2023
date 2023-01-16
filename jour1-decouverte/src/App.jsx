@@ -4,6 +4,7 @@ import Deuxieme from "./composants/Deuxieme";
 import Troisieme from "./composants/Troisieme";
 import Exo2 from "./composants/Exo2";
 import Exo3 from "./composants/Exo3";
+import Quatrieme from "./composants/Quatrieme";
 
 function App(){
   return <div>
@@ -15,6 +16,7 @@ function App(){
       <Exo2 />
       <Troisieme />
       <Exo3 />
+      <Quatrieme />
     </div>
 }
 
