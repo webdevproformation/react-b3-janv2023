@@ -1,0 +1,25 @@
+function Composant(){
+
+    const a = "bonjour"
+    const b = "hello"
+
+    return (
+        <div>
+            <button>action</button>
+            <p>{a} et {b} </p>
+        </div>
+    )
+}
+
+export default Composant ; 
+
+// créer un nouveau composant  Exo7
+créer un state information sa valeur par défaut "pas d'information"
+
+dans la vue 
+    <button> action 1</button>
+    <button> action 2</button>
+    <p> afficher la valeur de information</p>
+
+    si vous cliquez sur le 1er bouton modifier la valeur de information "nouvelle information"
+    si vous cliquez sur le 2ème bouton modifier la valeur de information "information complémentaire"
