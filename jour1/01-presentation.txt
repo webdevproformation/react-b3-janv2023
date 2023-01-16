@@ -1,0 +1,62 @@
+React / ReactJS / React.js => c'est la même chose 
+
+Librairie créée en 2011 par les équipes de Facebook 
+le site officiel => https://fr.reactjs.org
+
+Librairie FRONT => UI User Interface 
+UI apparence visuelle de l'outil que va manipuler l'utisateur
+UX User eXperience => ergonomie / charte graphique / vitesse de chargement
+DX Dévelopeur eXperience  
+
+absence de base de données => demande (ajax) à une API (Application Program Interface )
+
+page en html => élément de base => balise <h1> <h2> <p> <ul> 
+
+élément de base => Composant => élément que l'on va voir à l'écran 
+barre de menu 
+article 
+bouton liker 
+
+=> deux manières de créer des composants 
+
+via la class 
+via une fonction (xxxxx)
+
+=> jQuery => manipuler le DOM 
+=> React  => manipuler le Virtual DOM => l'application est lancée
+React va garder une copie de l'application sous forme de tableau / découpé composant par composant => mettre à jour et rechercher uniquement le composant modifié 
+
+axios => requête ajax 
+
+=> dépendance Nodejs 
+
+node -v 
+
+runtime de javascript => grâce à node js => vous pouvez créer des fichiers .js 
+exécuter n'importe où dans votre ordinateur
+
+npm => Node Package Manager => outil qui permet de télécharger et installer des packages (librairies) disponible sur le dépôt central 
+npmjs.org
+
+npm i <librairie>
+npm start 
+
+npx i <librairie>
+
+
+npm create vite
+jour1-decouverte
+React
+Javascript 
+
+Scaffolding project in C:\Users\harri\Desktop\react\jour1-decouverte
+
+cd jour1-decouverte # se placer dans le dossier jour1-decouverte
+npm i               # créer le dossier node_modules dossier qui contient l'ensemble des dépendances du notre projet react
+npm run dev         # lancer un serveur de développement local pour votre projet
+
+http://localhost:5173/
+
+vite => bundler 
+bundler => webpack 
+tree shake 

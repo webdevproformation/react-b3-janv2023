@@ -1,0 +1,71 @@
+npm create vite => échaffaudage 
+
+3 dossiers 
+node_modules => dossier contient l'ensemble de notre projet 
+jamais vous n'allez modifier manuellement des fichiers dans dossier 
+npm 
+
+public => l'ensemble des ressources public de votre projet 
+images / fichier pdf / font / css 
+
+src => source => 99% de notre temps pendant le projet 
+
+5 fichiers à racines 
+.gitgnore => éviter de versionner certains dossier par exemple le dossier node_modules 
+index.html TOUT le code réaliser dans la semaine va être injecté par React dans la balise <div id="root"></div>
+
+package.json => fichier de description de votre projet 
+
+npm run dev 
+
+vite.conf.js => comment vite dois faire le bundle ? 
+
+src / 
+
+main.js index.html (div id="root") 
+        App.jsx => fichier racine de votre application 
+
+
+document.getElementById("root")  <====> jsx XML + Javascript 
+
+transpiler (traduction) => traduire js (version 3) => javascript version 6
+
+jsx => javascript => Babeljs.io
+
+<p>hello</p> => jsx 
+"<p>hello</p>" => string 
+
+
+
+<p className="first" id="decouverte">hello
+  <span> sous titre </span>
+</p>
+
+React.createElement(
+        "p", 
+        { className: "first", id: "decouverte" }, 
+        "hello", 
+        React.createElement(
+            "span", 
+            null, 
+            " sous titre "
+        )
+);
+
+cas pratique 
+créer une composant Exo1 
+stocker 3 variables 
+prenom Alain
+nom DOE 
+adresse : { 
+    rue : "75 rue de Paris",
+    cp  : 75000 ,
+    ville : "Paris"
+}
+dans la partie return 
+
+<div>
+    <p> Alain DOE habite à Paris </p>
+    <p> il vit dans la rue 75 rue de Paris
+</div>
+exécuter le composant Exo1 dans le composant racine App.jsx 
