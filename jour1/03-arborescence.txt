@@ -148,3 +148,14 @@ afficher dans la vue du composant le jsx suivant  uniquement les voitures en sto
     <li> le Renault 208 coûte 15 000 € TTC </li>
     <li> le Nissan Qashqai coûte 12 000 € TTC </li>
 </ul>
+
+-----------
+
+créer le composant Exo6 
+
+img src="https://via.placeholder.com/400x200"
+
+si vous passer la souris sur l'image => grandir de 20 %
+si vous sortez la souris de l'image => remprendre sa taille initiale
+
+bonus faire en sorte que l'animation soit exécutée en 1 seconde taille initial > + 20%
