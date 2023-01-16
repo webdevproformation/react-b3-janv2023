@@ -1,0 +1,19 @@
+créer sur le bureau de votre ordinateur => react
+
+lancer votre editeur de texte (IDE)
+
+----------------
+
+Malik HARRIZ
+malik.h@webdevpro.net 
+
+React 
+
+----------------
+
+support de cours :
+https://formation.webdevpro.net/react (site non disponible sur Google)
+login : react 
+password : fb
+
+partagé les notes de cours sur github => 
