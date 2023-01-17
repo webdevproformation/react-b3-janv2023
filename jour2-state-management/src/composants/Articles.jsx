@@ -12,6 +12,7 @@ const Articles = () => {
 
     const ajouterCommentaire = ( idArticle , commentaire ) => {
         console.log(idArticle, commentaire)
+        // ajouter pour l'article concernée un commentaire dans sa propriété commentaires 
     }
     // afficher la liste des articles dans votre application React
     return ( <div className="row">
