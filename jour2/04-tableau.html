@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const articles = [
+            {id : 1 , titre : "Article 1" , img : "https://source.unsplash.com/random/400x200" , texte : "lorem ipsum" , commentaires : [
+                {id : 1 , auteur : "a" , texte : "bonjour"},
+                {id : 2 , auteur : "b" , texte : "bonjour"},
+            ]},
+            {id : 2 , titre : "Article 2" , img : "https://source.unsplash.com/random/400x201" , texte : "lorem ipsum" , commentaires : []},
+            {id : 3 , titre : "Article 3" , img : "https://source.unsplash.com/random/400x202" , texte : "lorem ipsum" , commentaires : []},
+        ]
+
+        // supprimer le commentaire qui a l'id 2 qui est stockée dans l'article qui a l'id 1 
+
+        const resultat = articles.map((article) => {
+            if(article.id === 1){
+                return {...article, commentaires : article.commentaires.filter((commentaire) => {
+                    return commentaire.id !== 2 ;
+                }) }
+            }
+            return article
+        })
+        console.log(resultat);
+
+        function a(){
+            return function(){
+                console.log("excution")
+            }
+        }
+        a()()
+
+    </script>
+</body>
+</html>
