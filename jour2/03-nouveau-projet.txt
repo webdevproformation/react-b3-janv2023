@@ -1,0 +1,23 @@
+npm create vite 
+jour2-state-management
+react
+javascript
+cd jour2-state-management
+npm install
+npm install bootstrap
+npm run dev
+
+nettoyage (supprimer des fichiers installé par défaut par vite)
+=> src/index.css
+=> src/App.css
+
+=> modifier le fichier src/main.jsx 
+//import './index.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+
+=> modifier le fichier src/App.jsx 
+vider le fichier 
+
+// barre de menu 
+
+// créer le dossier composants
