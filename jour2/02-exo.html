@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const livres = [
+            {id : 1 , titre : "les miserables" , publie : 1890 , auteur : {prenom : "Victor" , nom : "Hugo" }},
+            {id : 2 , titre : "le horla" , publie : 1886 , auteur : {prenom :  	"Guy" , nom : "de Maupassant" }},
+            {id : 3 , titre : "le conte de Montecristo " , publie : 1910 , auteur : {prenom : "Alexandre"  , nom : "Dumas" }},
+        ] ;
+
+        //  1 donner la liste de tous  les livres écrits AVANT 1910
+
+        console.log(livres.filter( (livre) => livre.publie < 1910  ))
+
+        // 2 donner la liste de tous les livres écrit pas victor hugo 
+
+        const resultat2 = livres.filter(livre =>   
+            livre.auteur.prenom.toLowerCase() === "victor" && livre.auteur.nom.toLowerCase() === "hugo"
+        )
+        console.log(resultat2);
+
+        // "le conte de Montecristo a été publié en 1910"
+        const phrase = `${livres[2].titre} a été publié en ${livres[2].publie}`
+        //           = livres[2].titre + " a été publié en " + livres[2].publie
+        
+        // destruction 
+        const { titre , publie } = livres[2]
+        const phrase2 = `${titre} a été publié en ${publie}`
+        console.log(phrase2)
+        
+        const resultat3 =  livres.map( (livre) => {
+            return {...livre , titre : livre.titre.toUpperCase()}
+        } )
+        
+        console.log(resultat3);
+    </script>
+</body>
+</html>
