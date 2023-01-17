@@ -16,7 +16,7 @@ nettoyage (supprimer des fichiers installé par défaut par vite)
 import "bootstrap/dist/css/bootstrap.min.css";
 
 => modifier le fichier src/App.jsx 
-vider le fichier 
+vider le fichier  
 
 // barre de menu 
 
