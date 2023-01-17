@@ -9,6 +9,10 @@ const Articles = () => {
         {id : 2 , titre : "Article 2" , img : "https://source.unsplash.com/random/400x201" , texte : "lorem ipsum" , commentaires : []},
         {id : 3 , titre : "Article 3" , img : "https://source.unsplash.com/random/400x202" , texte : "lorem ipsum" , commentaires : []},
     ])
+
+    const ajouterCommentaire = ( idArticle , commentaire ) => {
+        console.log(idArticle, commentaire)
+    }
     // afficher la liste des articles dans votre application React
     return ( <div className="row">
         {articles.map( article => 
@@ -22,7 +26,7 @@ const Articles = () => {
                     {/** balise orpheline br img hr input le / final est OBLIGATOIRE */}
                     <hr />
                     {/** si la propriété commentaire de l'objet article contient aucun commentaire => ajouter un nouveau commentaire / liste des commentaires existants */ }
-                    <ArticleFormulaire />
+        <ArticleFormulaire ajouterCommentaire={ajouterCommentaire} id={article.id} />
                     <hr />
                     <ArticleCommentaires article={article} />
                     {/* envoie au composant enfant l'article */}

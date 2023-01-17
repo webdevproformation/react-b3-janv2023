@@ -1,6 +1,6 @@
 import { useRef } from "react"
 
-const ArticleFormulaire = () => {
+const ArticleFormulaire = ({ajouterCommentaire , id}) => {
     const auteurRef = useRef() ;
     const texteRef = useRef() ;
 
@@ -12,6 +12,8 @@ const ArticleFormulaire = () => {
             texte : texteRef.current.value
         }
         console.log(commentaire); 
+        ajouterCommentaire(  id , commentaire )
+        e.target.reset(); // vider le formulaire 
     }
 
     return ( <form className="px-3" onSubmit={handleSubmit}>
