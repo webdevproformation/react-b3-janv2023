@@ -21,3 +21,9 @@ vider le fichier
 // barre de menu 
 
 // créer le dossier composants
+
+// pour chaque commentaire que l'on vient d'ajouter
+// 1 ajouter un bouton qui permet de supprimer un commentaire existant 
+// 2 ajouter sous chaque article la possibilité de liker l'article 
+//  bouton si vous cliquez dessus augmenter de + 1 un compteur de like 
+
