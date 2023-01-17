@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // en 2015 => javascript a évolué version ES6 
+        // ECMAScript 6 
+        // var => let const 
+        // () => {}
+        // class 
+        // ... 
+        // destructuration
+        // Uncaught SyntaxError: redeclaration of const
+        /* const a = 10 ;
+
+        // ....
+
+        var a = function(){}
+        var a = []
+        var a = false  */
+
+        /* const b = 10 ; 
+        b = "toto" 
+        Uncaught TypeError: invalid assignment to const 'b'*/
+        const c = "bonjour" ; // string
+        const d = 12 ; // number
+        const e = false ; // boolean
+
+        const f  = [1,2,3] // array 
+        f[0]= 100 ; // aucune erreur
+        //f = {} erreur car modification l'adresse mémoire de la variable
+
+        const g = { id : 1}
+        g.id = 2000; // aucune erreur 
+
+        let h = 10 ;
+            h = 30
+            h = []
+        
+        // let h = 5
+
+        // fonction fléché en 2015 => on a ajouté une nouvelle manière de créer des fonctions en javascript 
+        // () => {}
+
+        function f1(){}
+
+        const f2 = function(){}
+
+        const f3 = () => {}
+
+        // nombre de paramètre
+        // 0 => ()
+        // 1 => () facultative
+        // > 1 => ()
+
+        const calcul = (rayon) => {}
+        const calcul2 = rayon => {}
+        const calcul3 = (a, b) => {}
+
+        // 1 instruction avec ou sans  return => { } facultative
+        // > 1 instruction => { obaligatoire }  
+
+        const livres = ["Notre Dame", "Les Misérables"]
+
+        // rechercher tous les livres qui contiennent la lettre M
+
+        const recherche = livres.filter(function(livre){
+            return livre.includes("M")
+        })
+        console.log(recherche);
+
+        /* const recherche = livres.filter((livre) => {
+            return livre.includes("M")
+        }) */
+
+        /* const recherche = livres.filter(livre => {
+            return livre.includes("M")
+        }) */
+
+        livres.filter(livre => livre.includes("M"))
+
+        // .map(() => {}) => jsx / méthode associées aux events
+        // .reduce()
+        // .filter()
+        // .find()
+        
+        // opérateur unaire += ++ -- ! ...
+        let compteur = 10 ;
+            compteur += 5 ; // opérateur unaire 1 variable / valeur 
+
+        // opérateur binaire + - * / && || 
+        const total = 12 + 12 ;
+
+        // opérateur ternaire 
+        const verif = ( true ) ? "bonjour" : "fin" ; 
+
+        // ... => opérateur unaire 
+        // tableau objet 
+
+        const etudiants = ["alain", "benoit"];
+
+        const lesEtudiants = [etudiants[0] , etudiants[1]] ; 
+        const lesEtudiants2 = [...etudiants] ; 
+
+        // passage par référence
+
+        const fleurs = ["jasmin", "lila", "violette"]; 
+
+        const fleurs2 = [...fleurs] ;  // clone fleurs (avec une autre adresse mémoire)
+
+        fleurs2[0] = "jonquille"; 
+
+        console.log(fleurs); // ["jasmin", "lila", "violette"] ??? 
+        console.log(fleurs2); // ["jonquille", "lila", "violette"]
+
+
+        // ... tableau et objet 
+
+        const etudiant = { id : 1 , nom : "Alain" }
+        const etudiant2 = {...etudiant} ; // clone de etduaint
+
+        etudiant2.id = 2;
+        etudiant2.nom = "Pierre";
+
+        console.log(etudiant) // { id : 1 , nom : "Pierre" }
+        console.log(etudiant2) // { id : 1 , nom : "Pierre" }
+
+        // shallow copy => copie superficiel
+
+        const formation = {
+            nom : "react",
+            duree : 5 ,
+            sommaire : [ "installation" , "mise en ligne" ]
+        }
+
+       // const formation2 = {...formation} // shallow copy (uniquement le 1er niveau)
+        const formation2 = _.cloneDeep(formation) // copie en profondeur de l'objet etudiant 
+
+        formation2.nom = "angular"
+        formation2.sommaire[0] = "npm" ;
+ 
+        console.log(formation) //{nom : "react",duree : 5 , sommaire : [ "npm" , "mise en ligne" ]}
+        console.log(formation2) //{nom : "angular",duree : 5 , sommaire : [ "npm" , "mise en ligne" ]}
+
+        // lodash cloneDeep 
+
+
+    </script>
+</body>
+</html>
+<!--
+    créer le fichier 02-exo.html
+
+    créer une variable 
+
+    [
+        {id : 1 , titre : "les miserables" , publie : 1890 , auteur : {prenom : Victor , nom : Hugo }},
+        {id : 2 , titre : "le horla" , publie : 1886 , auteur : {prenom :  	Guy , nom : de Maupassant }},
+        {id : 3 , titre : "le conte de Montecristo " , publie : 1910 , auteur : {prenom : Alexandre  , nom : Dumas }},
+    ]
+
+    // donner la liste de tous  les livres écrits AVANT 1910
+
+    // donner la liste de tous les livres écrit pas victor hugo 
+
+    // écrire la phrase suivante dans la console "le conte de Montecristo a été publié en 1910"
+
+    // compter le nombre de livre publié après 1880 
+-->
