@@ -13,6 +13,14 @@ const Articles = () => {
     const ajouterCommentaire = ( idArticle , commentaire ) => {
         console.log(idArticle, commentaire)
         // ajouter pour l'article concernée un commentaire dans sa propriété commentaires 
+        const articlesModifie = articles.map( article => {
+            if(article.id === idArticle) {
+                article.commentaires.push(commentaire)
+                return article
+            }
+            return article
+        }  )
+        setArticles(articlesModifie)
     }
     // afficher la liste des articles dans votre application React
     return ( <div className="row">
