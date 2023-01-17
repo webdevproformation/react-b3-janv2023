@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ArticleCommentaires from "./ArticleCommentaires";
+import ArticleFormulaire from "./ArticleFormulaire";
 
 const Articles = () => {
 
@@ -20,19 +22,10 @@ const Articles = () => {
                     {/** balise orpheline br img hr input le / final est OBLIGATOIRE */}
                     <hr />
                     {/** si la propriété commentaire de l'objet article contient aucun commentaire => ajouter un nouveau commentaire / liste des commentaires existants */ }
-                    <form className="px-3">
-                        <input type="text" className="form-control mb-3" placeholder="votre nom" />
-                        <textarea className="form-control mb-3" placeholder="votre message" ></textarea>
-                        <input type="submit" className="btn btn-success" value="ajouter" />
-                    </form>
+                    <ArticleFormulaire />
                     <hr />
-                    { article.commentaires.length === 0 ? <p className="px-3">veuillez ajouter une commentaire</p> : <div>
-                        {article.commentaires.map( commentaire => 
-                            <p key={commentaire.id}>
-                                {commentaire.auteur} - {commentaire.texte}
-                            </p>
-                         )}
-                    </div> }
+                    <ArticleCommentaires article={article} />
+                    {/* envoie au composant enfant l'article */}
                 </div>
             </article> )}
     </div> );
