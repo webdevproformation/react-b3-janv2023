@@ -22,4 +22,21 @@ export const contactVerif = Joi.object({
                   })
 })
 
+
+export const identifiantVerif = Joi.object({
+    login :  Joi.string()
+                .min(4)
+                .max(200)
+                .email({ tlds: { allow: false } })
+                .required(),
+    password  : Joi.string()
+                    .min(4)
+                    .max(200)
+                    .regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!?\.\\/;,\[\]]).{4,}$/)
+                    .required()
+                    .messages({
+                        "string.pattern.base" : "le password doit contenir au minimum une majuscule, une minuscule, un chiffre et un caractère spécial"
+                    })
+})
+
 // /^[^<>]*$/ accepter tous les caractères sauf les chevrons < > 

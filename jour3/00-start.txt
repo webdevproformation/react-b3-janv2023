@@ -70,4 +70,6 @@ effectuer des vérifications avec joi
 login min 4 lettres / maximum 200 lettres / email valid 
 password min 4 lettres / maximum 200 lettres / contient 1 Majuscule 1 Minuscule 1 chiffre et 1 caractère spécial
 
+(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!?\.\\/;,\[\]]).{4,}
+
 // faire une demande à l'API sur la table users 
