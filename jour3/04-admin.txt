@@ -1,0 +1,11 @@
+créer une composant Dashboard 
+page d'accueil du back office 
+
+au moment du chargement du composant réaliser une requête ajax auprès de l'API pour récupérer l'ensemble des données de la table articles 
+
+afficher les articles présents dans tableau 
+
+<table>
+    qui contient 5 colonnes 
+    id / titre / contenu / img / nb commentaires / action  
+</table>
