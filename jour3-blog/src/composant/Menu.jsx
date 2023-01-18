@@ -1,5 +1,6 @@
 // sfc 
 // ffc
+import { NavLink } from "react-router-dom"
 function Menu() {
     return ( 
         <div className="bg-primary">
@@ -20,13 +21,15 @@ function Menu() {
                 </span>
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a href="" className="nav-link">Accueil</a>
+                        <NavLink to="/" className={({isActive}) => {
+                            return isActive ? "nav-link active text-dark" : "nav-link"
+                        }}>Accueil</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a href="" className="nav-link">Contact</a>
+                        <NavLink to="/contact" className="nav-link">Contact</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a href="" className="nav-link">Connexion</a>
+                        <NavLink to="/login" className="nav-link">Connexion</NavLink>
                     </li>
                 </ul>
             </nav>
