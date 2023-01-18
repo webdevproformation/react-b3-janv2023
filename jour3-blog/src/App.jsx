@@ -1,5 +1,9 @@
+import Menu from "./composant/Menu";
+
 const App = () => {
-  return ( <></> );
+  return ( <>
+    <Menu />
+  </> );
 }
  
 export default App;

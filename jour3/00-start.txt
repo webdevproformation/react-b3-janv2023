@@ -42,5 +42,21 @@ export default App ;
 => joi verifier que les données qui sont saisies dans un formulaire sont conformes (avant traitement )
 
 => créer un composant 
+// créer une barre de menu 
 
+
+=> Router 
+
+lien entre l'url saisit dans la barre d'adresse et un tableau qui liste l'ensemble des adresses utilisables 
+
+si une adresse match => le composant associé à l'adresse qui match est exécutée 
+
+main.jsx 
+
+
+import {  BrowserRouter , Routes , Route } from "react-router-dom"
+
+BrowserRouter => écouter ce qui est écrit la barre d'adresse 
+Routes => créer liste 
+Route => associer un url => composant 
 
