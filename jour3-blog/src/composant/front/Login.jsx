@@ -1,11 +1,13 @@
 import axios from "axios";
 import {useRef , useState} from "react"
 import { identifiantVerif } from "../../verif/liste";
+import { useNavigate } from "react-router-dom"
 
 const Login = () => {
     const loginRef = useRef();
     const passwordRef = useRef();
     const [ alerte , setAlerte ] = useState({})
+    const navigate = useNavigate();
     
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -31,7 +33,14 @@ const Login = () => {
                 const recherche = reponse.data.find( profil => {
                     return profil.login === identifiants.login && profil.password === identifiants.password
                 } )
-                if(recherche) return setAlerte({type:"success" , liste : ["connexion réussie"]})
+                if(recherche) {
+                    setAlerte({type:"success" , liste : ["connexion réussie"]})
+                    setTimeout( ( ) => {
+                        setAlerte({});
+                        navigate("/admin"); // hook de redirection react-router-dom
+                    }, 1000)
+                    return 
+                }
                 setAlerte({type:"warning" , liste : ["identiants invalides"]})
             }
             

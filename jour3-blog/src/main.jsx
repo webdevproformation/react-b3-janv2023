@@ -17,6 +17,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route index element={<Home />} />
           <Route path='contact' element={<Contact />} />
           <Route path="login" element={<Login />} />
+          <Route path="admin/" >
+            <Route index element={<>bienvenu dans le back office</>} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
