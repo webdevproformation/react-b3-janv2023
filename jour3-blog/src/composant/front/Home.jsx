@@ -17,7 +17,6 @@ const Home = () => {
 
     const articles = useArticle()
   
-
     return ( <div className="row">
         <h1>Bienvenu sur mon Blog</h1>
         {articles.map(article => {

@@ -6,6 +6,7 @@ import {  BrowserRouter , Routes , Route } from "react-router-dom"
 import Home from './composant/front/Home';
 import Contact from './composant/front/Contact';
 import Login from './composant/front/Login';
+import Dashboard from './composant/back/Dashboard';
 
 
 
@@ -18,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='contact' element={<Contact />} />
           <Route path="login" element={<Login />} />
           <Route path="admin/" >
-            <Route index element={<>bienvenu dans le back office</>} />
+            <Route index element={<Dashboard />} />
           </Route>
         </Route>
       </Routes>
