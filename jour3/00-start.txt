@@ -1,0 +1,46 @@
+support de cours :
+https://formation.webdevpro.net/react (site non disponible sur Google)
+login : react 
+password : fb
+
+partagé les notes de cours sur github => 
+https://github.com/webdevproformation/react-b3-janv2023
+
+=> routing de react => site internet 
+
+=> Blog => 
+Accueil
+Articles 
+single ( un seul article )
+Connexion 
+404 (url introuvable )
+
+npm create vite
+jour3-blog 
+react
+javascript 
+cd jour3-blog
+npm i 
+npm i react-router-dom bootstrap axios joi
+npm run dev 
+
+
+=> nettoyage (App.css / index.css / dossier assets)
+=> modification dans le fichier main.jsx => appeler bootstrap 
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+=> vider le fichier App.jsx 
+const App = () => {
+    return <></>
+}
+export default App ; 
+
+=> react-router-dom qui permet de mettre en place des Routes /naviger entre des pages du site 
+=> bootstrap mise en forme 
+=> axios librairie qui permet de réaliser des requêtes AJAX 
+=> joi verifier que les données qui sont saisies dans un formulaire sont conformes (avant traitement )
+
+=> créer un composant 
+
+
