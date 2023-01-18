@@ -1,8 +1,10 @@
+import { useState } from "react";
 import {useRef} from "react"
 import { contactVerif } from "../../verif/liste";
 const Contact = () => {
     const emailRef = useRef();
     const messageRef = useRef();
+    const [ alerte , setAlerte ] = useState({})
     const handleSubmit = (e) => {
         e.preventDefault();
         const demande = {
@@ -11,15 +13,12 @@ const Contact = () => {
         }
 
         const {error} =  contactVerif.validate(demande , {abortEarly : false})
-        /* console.log(r)
-        return ; */
         if(error) {
             // gérer les messages d'erreur 
-
-            console.log(error.details.map(m => m.type));
-            const messages = error.details.map(m => m.message);
-            console.log(messages);
-
+            //console.log(error.details.map(m => m.type));
+            const messagesErreur = error.details.map(m => m.message);
+            setAlerte({ type : 'danger' , liste : messagesErreur });
+            return ; 
         }
         // avant d'enregistrer des informations qui ont été saisie dans un formulaire , il FAUT OBLIGATOIREMENT les vérifier 
         // pour vérifier que les données sont conformes => joi 
@@ -34,6 +33,11 @@ const Contact = () => {
             <textarea  placeholder="votre message" className="form-control mb-3" rows={5} ref={messageRef}></textarea>
             <input type="submit" className="btn btn-dark" />
         </form>
+        { Object.keys(alerte).length > 0 && <div className={`alert alert-${alerte.type} mt-3`}>
+            {alerte.liste.map((a, index) => {
+                return <div key={index}>{a}</div>
+            })}
+        </div>}
     </> );
 }
  
