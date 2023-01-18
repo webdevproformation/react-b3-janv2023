@@ -10,7 +10,7 @@ const Contact = () => {
         e.preventDefault();
         const demande = {
             email : emailRef.current.value ,
-            message : messageRef.current.value
+            message : JSON.stringify(messageRef.current.value)
         }
         // avant d'enregistrer des informations qui ont été saisie dans un formulaire , il FAUT OBLIGATOIREMENT les vérifier 
         // pour vérifier que les données sont conformes => joi 
@@ -29,7 +29,7 @@ const Contact = () => {
                 // vider le formulaire
                 e.target.reset();
                 // message pour remercier l'utilisateur 
-                setAlerte({type : "success" , liste : ["le message est bien enregistré"] }) 
+                setAlerte({type : "success" , liste : ["🛸 le message est bien enregistré"] }) 
              })
              .catch(ex => setAlerte({type : "warning" , liste : ["erreur lors de l'enregistrement du message"]}))
     }
