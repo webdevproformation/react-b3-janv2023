@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import {useRef} from "react"
 import { contactVerif } from "../../verif/liste";
@@ -11,7 +12,8 @@ const Contact = () => {
             email : emailRef.current.value ,
             message : messageRef.current.value
         }
-
+        // avant d'enregistrer des informations qui ont été saisie dans un formulaire , il FAUT OBLIGATOIREMENT les vérifier 
+        // pour vérifier que les données sont conformes => joi 
         const {error} =  contactVerif.validate(demande , {abortEarly : false})
         if(error) {
             // gérer les messages d'erreur 
@@ -20,17 +22,36 @@ const Contact = () => {
             setAlerte({ type : 'danger' , liste : messagesErreur });
             return ; 
         }
-        // avant d'enregistrer des informations qui ont été saisie dans un formulaire , il FAUT OBLIGATOIREMENT les vérifier 
-        // pour vérifier que les données sont conformes => joi 
-
-        console.log(demande);   
+        
+        // envoyer les données saisies dans l'API pour enregistrement 
+        axios.post(`${import.meta.env.VITE_API}contact.json`, demande)
+             .then(reponse => {
+                // vider le formulaire
+                e.target.reset();
+                // message pour remercier l'utilisateur 
+                setAlerte({type : "success" , liste : ["le message est bien enregistré"] }) 
+             })
+             .catch(ex => setAlerte({type : "warning" , liste : ["erreur lors de l'enregistrement du message"]}))
     }
+    const handleFocus = () => {
+        setAlerte({});
+    }
+
     return ( <>
         <h1>Nous contacter</h1>
         <p>Besoin d'informations, veuillez compléter le formulaire suivant :</p>
         <form onSubmit={handleSubmit}>
-            <input type="email" placeholder="votre@email.fr"  className="form-control mb-3" ref={emailRef}/>
-            <textarea  placeholder="votre message" className="form-control mb-3" rows={5} ref={messageRef}></textarea>
+            <input type="email" 
+                   placeholder="votre@email.fr"  
+                   className="form-control mb-3" 
+                   ref={emailRef}
+                   onFocus={handleFocus}/>
+            <textarea  
+                   placeholder="votre message" 
+                   className="form-control mb-3" 
+                   rows={5} 
+                   ref={messageRef}
+                   onFocus={handleFocus}></textarea>
             <input type="submit" className="btn btn-dark" />
         </form>
         { Object.keys(alerte).length > 0 && <div className={`alert alert-${alerte.type} mt-3`}>

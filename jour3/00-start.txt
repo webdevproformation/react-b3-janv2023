@@ -60,3 +60,14 @@ BrowserRouter => écouter ce qui est écrit la barre d'adresse
 Routes => créer liste 
 Route => associer un url => composant 
 
+
+
+Dans le composant Login :
+ajouter un formulaire avec deux champs login et password 
+soumettre ce formulaire et récupérer les valeurs saisies 
+
+effectuer des vérifications avec joi 
+login min 4 lettres / maximum 200 lettres / email valid 
+password min 4 lettres / maximum 200 lettres / contient 1 Majuscule 1 Minuscule 1 chiffre et 1 caractère spécial
+
+// faire une demande à l'API sur la table users 
