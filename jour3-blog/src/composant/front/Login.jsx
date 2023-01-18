@@ -1,3 +1,4 @@
+import axios from "axios";
 import {useRef , useState} from "react"
 import { identifiantVerif } from "../../verif/liste";
 
@@ -24,6 +25,22 @@ const Login = () => {
         }
         // requete ajax pour récupérer les identifiants => si login et password existent => connecté sinon => erreur identifiants invalides
         console.log(identifiants)
+        // requete ajax qui récupére l'ensemble des enregistrements de la table users 
+        axios.get(`${import.meta.env.VITE_API}users.json`)
+            .then( (reponse) => {
+                const recherche = reponse.data.find( profil => {
+                    return profil.login === identifiants.login && profil.password === identifiants.password
+                } )
+                if(recherche) return setAlerte({type:"success" , liste : ["connexion réussie"]})
+                setAlerte({type:"warning" , liste : ["identiants invalides"]})
+            }
+            
+            )
+            .catch(ex => setAlerte({type:"danger" , liste : ["problème avec l'API"]}))
+
+        // parcourir comparer chaque enregistrement avec login / password 
+        // si rien ne correspond => message => identifiants invalides
+        // si ça fonctionne => message connexion  !! 
 
     }
     const handleFocus = () => {
