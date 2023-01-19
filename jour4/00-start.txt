@@ -1,0 +1,30 @@
+support de cours :
+https://formation.webdevpro.net/react (site non disponible sur Google)
+login : react 
+password : fb
+
+partagé les notes de cours sur github => 
+https://github.com/webdevproformation/react-b3-janv2023
+
+finir le back office => 
+3 actions de base :
+
+- créer un nouvel article 
+- modifier un article existant
+- supprimer un article existant 
+cas pratique
+1 ajouter un nouveau lien dans la barre de menu => à l'admin 
+
+2 dans le composant admin ajouter un nouveau bouton "créer nouvel article" 
+<Link /> react-router-dom => 
+3 Vous accédez à un formulaire qui contient 3 champs 
+- titre 
+- contenu 
+- url de l'image 
+verifier que les informations saisies sont conformes 
+titre min de 4 lettres max 250 lettres obligatoires attentions aux caractères spéciaux > < 
+contenu plus 10000
+url => peut pas être vide et contenir un url valide 
+vous allez effectuer l'enregistrement dans l'API 
+bandeau bravo c'est enregistré 
+
