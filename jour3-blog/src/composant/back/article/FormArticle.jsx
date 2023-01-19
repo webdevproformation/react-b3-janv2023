@@ -2,6 +2,7 @@ import { useRef } from "react"
 import { articleVerif } from "../../../verif/liste"
 import { useAlert } from "../../../hook/useAlert";
 import axios from "axios";
+import Alert from "../../Alert";
 
 const FormArticle = () => {
     const titreRef = useRef();

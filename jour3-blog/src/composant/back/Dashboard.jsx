@@ -27,7 +27,7 @@ const Dashboard = () => {
                             <td>{article.titre}</td>
                             <td>{article.contenu}</td>
                             <td><img src={article.img} alt="" width="60" /></td>
-                            <td>{Object.keys(article.commentaires).length}</td>
+                            <td>{ article.commentaires ? Object.keys(article.commentaires).length : 0 }</td>
                             <td>
                                 <button className="btn btn-warning me-2">modifier</button>
                                 <button  className="btn btn-danger">supprimer</button>
