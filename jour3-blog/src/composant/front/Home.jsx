@@ -23,7 +23,9 @@ const Home = () => {
             return <article className="col-4"  key={article.id}>
                 <div className="card">
                     <h2 className="card-header">{article.titre}</h2>
-                    <img src={article.img} alt="" />
+                    <Link to={`/article/${article.id}`}>
+                        <img src={article.img} alt="" className="img-fluid" />
+                    </Link>
                     <div className="card-body">
                         {article.contenu }
                     </div>
