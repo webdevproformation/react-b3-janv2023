@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = 2 ;
+        const b = 3 ;
+        console.log(a + b) ; 
+        // programme synchrone 
+        // le code va s'exécuter dans l'ordre dans lequel tu l'as écrit 
+
+        // programme 
+        // le code va s'exécuter dans une ordre différent que celui que tu as écrit 
+
+        const d = 30 ; // #1
+        setTimeout( function(){ // mise en mémoire SANS attendre que ce soit exécuté // #3 
+            const c = 50 ;
+        },  1000) // Attend !!!
+        console.log(d + c); // #2 
+        // programme asynchrone
+
+        // javascript N'ATTEND PAS que une ligne soit exécutée à 100% pour passer à la suivante 
+
+        // comment faire pour DIRE à JAVASCRIPT => ATTEND que la ligne soit exécutée à 100% pour passer à la suivante !! 
+
+        // en Javascript Promise => attend 
+
+        
+    </script>
+</body>
+</html>
