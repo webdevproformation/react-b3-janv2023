@@ -32,6 +32,11 @@ function Menu() {
                         <NavLink to="/login" className="nav-link">Connexion</NavLink>
                     </li>
                 </ul>
+                <ul className="navbar-nav ms-auto">
+                    <li className="nav-item">
+                        <NavLink to="/admin" className="nav-link">Admin</NavLink>
+                    </li>
+                </ul>
             </nav>
         </div>
      );
