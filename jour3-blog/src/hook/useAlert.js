@@ -1,7 +1,7 @@
-export const useAlert = ( schemaVerif  , data) => {
+import { useState } from "react";
+export const useAlert = ( schemaVerif ) => {
     const [ alerte , setAlerte ] = useState({})
-
-    const getError = () => {
+    const getError = (data) => {
         const {error} =  schemaVerif.validate(data , {abortEarly : false})
         if(error) {
             // gérer les messages d'erreur 
@@ -12,6 +12,5 @@ export const useAlert = ( schemaVerif  , data) => {
         }
         return false ;
     }
-
     return [alerte , setAlerte , getError]
 }

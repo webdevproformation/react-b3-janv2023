@@ -1,14 +1,15 @@
 import axios from "axios";
-import {useRef , useState} from "react"
+import {useRef } from "react"
 import { identifiantVerif } from "../../verif/liste";
 import { useNavigate } from "react-router-dom"
 import Alert from "../Alert"; 
+import { useAlert } from "../../hook/useAlert"
 
 const Login = () => {
     const loginRef = useRef();
     const passwordRef = useRef();
-    const [ alerte , setAlerte ] = useState({})
     const navigate = useNavigate();
+    const [alerte , setAlerte, getError ] = useAlert(identifiantVerif);
     
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -17,15 +18,8 @@ const Login = () => {
             password : passwordRef.current.value
         }
 
-        const { error } = identifiantVerif.validate(identifiants , {abortEarly : false})
-
-        if(error) {
-            // gérer les messages d'erreur 
-            // console.log(error.details.map(m => m.type));
-            const messagesErreur = error.details.map(m => m.message);
-            setAlerte({ type : 'danger' , liste : messagesErreur });
-            return ; 
-        }
+        if(getError(identifiants)) return ;
+        
         // requete ajax pour récupérer les identifiants => si login et password existent => connecté sinon => erreur identifiants invalides
         console.log(identifiants)
         // requete ajax qui récupére l'ensemble des enregistrements de la table users 
