@@ -1,0 +1,42 @@
+{
+  "articles": {
+    "-NM9H4p_UDezThSPxT19": {
+      "contenu": "how are you ??? \navec une modification\nplusieurs \nmise à jour",
+      "img": "https://source.unsplash.com/random/400x201",
+      "titre": "Hello"
+    },
+    "-NM9IXKBWFFk8_WdMoYY": {
+      "contenu": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo architecto iure porro qui minus id, aspernatur cumque, alias maxime optio, quis iste tenetur sint commodi corporis repudiandae tempora quam consequuntur.",
+      "img": "https://source.unsplash.com/random/400x200",
+      "titre": "nouveau article"
+    }
+  },
+  "contact": {
+    "-NM42LIEEzOQAt29sDJT": {
+      "email": "toto@yahoo.fr",
+      "message": "un message\npour tester le formulaire"
+    },
+    "-NM46vR0FHLsCEmkHV5A": {
+      "email": "bravo@yahoo.fr",
+      "message": "hello les amis"
+    },
+    "-NM47-GQ_wy-FMu5ejUW": {
+      "email": "bravo@yahoo.fr",
+      "message": "Bravo 2\navec saut de ligne"
+    },
+    "-NM47B6Aabsk5TQgGxUQ": {
+      "email": "message@yahoo.fr",
+      "message": "\"avec\\nun \\nsaut de ligne\""
+    },
+    "-NM5fR4jBLCMx5YI50a2": {
+      "email": "kouibaatii@polywitch.com",
+      "message": "\"Trying out the form \""
+    }
+  },
+  "users": [
+    {
+      "login": "azerty@yahoo.fr",
+      "password": "Azerty1!"
+    }
+  ]
+}
