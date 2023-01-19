@@ -13,7 +13,6 @@ import CycleVie from './composant/front/CycleVie';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}>

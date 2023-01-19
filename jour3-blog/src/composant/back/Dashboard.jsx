@@ -4,12 +4,19 @@ import axios from "axios";
 
 const Dashboard = () => {
     const navigate =  useNavigate()
-    const articles = useArticle()
+    const [articles, setArticles] = useArticle()
 
     const handleSupprimer = (id) => {
         axios.delete(`${import.meta.env.VITE_API}articles/${id}.json`)
              .then(() => {
-                navigate("/admin")
+                axios.get(`${import.meta.env.VITE_API}articles.json`)
+                .then((reponse) => {
+                    const resultat = []
+                    for(const key in reponse.data){
+                        if(reponse.data[key]) resultat.push({...reponse.data[key] , id : key})
+                    }
+                    setArticles(resultat)
+                })
              })
     }
     // rdv 13h40 

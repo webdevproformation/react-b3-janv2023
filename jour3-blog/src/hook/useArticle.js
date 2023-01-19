@@ -15,7 +15,11 @@ export function useArticle(){
             // { "0" : { "auteur" : "Alain" , "texte" : "super article" }, "1" : { "auteur" : "Alain" , "texte" : "beau boulot" } }
             // [{ "auteur" : "Alain" , "texte" : "super article" } , ]
          })
-    } , [] ) 
+    } , [articles.length] ) // exécute que lorsque la page est chargé et update
 
-    return articles  ; 
+    /* useEffect( () => { // lorsque je modifie le nombre d'article (DELETE)
+        
+    } , [])  */
+
+    return [articles, setArticles]  ; 
 }

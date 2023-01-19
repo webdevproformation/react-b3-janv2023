@@ -5,6 +5,8 @@ const CycleVie = () => {
     const [nb, setNb] = useState(0)
     // 1ère manière useEffect deuxième paramètre []
     // le callback (le 1er paramètre) ne s'exécute que lorsque le composant est monté => que 1 seule fois lors du changement du composant 
+    // utilisé uniquement requête pour remplir le state 
+    // Home // Dashboard 
     useEffect( () => {
         console.log("manière 1")
     }, [])
