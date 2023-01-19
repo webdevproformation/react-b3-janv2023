@@ -1,4 +1,5 @@
 import { useArticle } from "../../hook/useArticle";
+import { Link } from "react-router-dom"
 
 const Dashboard = () => {
 
@@ -6,7 +7,10 @@ const Dashboard = () => {
 
     return ( 
         <>
-            <h2>Liste des articles publiés</h2>
+            <div className="d-flex justify-content-between align-items-center mb-3">
+                <h2>Liste des articles publiés</h2>
+                <Link className="btn btn-info" to="/admin/article/add">ajouter un nouvel article</Link>
+            </div>
             <table className="table table-sm table-striped">
                 <thead>
                     <th>id</th>

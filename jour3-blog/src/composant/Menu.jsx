@@ -3,7 +3,7 @@
 import { NavLink } from "react-router-dom"
 function Menu() {
     return ( 
-        <div className="bg-primary">
+        <div className="bg-primary mb-3">
             {/**
              * primary : bleu
              * secondary : gris
