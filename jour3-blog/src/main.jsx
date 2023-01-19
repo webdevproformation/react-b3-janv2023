@@ -11,6 +11,7 @@ import Login from './composant/front/Login';
 import Dashboard from './composant/back/Dashboard';
 import FormArticle from './composant/back/article/FormArticle';
 import CycleVie from './composant/front/CycleVie';
+import Single from './composant/front/Single';
 
 
 
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='contact' element={<Contact />} />
           <Route path="login" element={<Login />} />
           <Route path="cycle-vie" element={<CycleVie />} />
+          <Route path="article/:id" element={<Single />} />
           <Route path="admin">
             <Route index element={<Dashboard />} />
             <Route path="article"> 

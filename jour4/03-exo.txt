@@ -17,3 +17,5 @@ lire la suite
 créer dans front le composant Article 
 
 réaliser une requête appeler l'api l'article concerné 
+
+15h28 pour la correction

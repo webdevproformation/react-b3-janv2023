@@ -1,5 +1,5 @@
 import { useArticle } from "../../hook/useArticle";
-
+import { Link } from "react-router-dom"
 
 const Home = () => {
     //const [articles, setArticles] =useState([{},{},{}])
@@ -27,6 +27,11 @@ const Home = () => {
                     <div className="card-body">
                         {article.contenu }
                     </div>
+                    <footer className="card-footer d-flex justify-content-end" >
+                        <Link to={`/article/${article.id}`} className="btn btn-dark">
+                            lire la suite ...
+                        </Link> 
+                    </footer>
                 </div>
             </article>
         })}
