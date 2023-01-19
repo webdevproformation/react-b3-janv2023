@@ -5,3 +5,15 @@ Update
 => qu'il soit remplir avec les valeurs mises précédemment (stocké en base de données )
 => 
 15h10 
+
+--------------
+
+Cas pratique :
+dans le composant home => ajouter un <Link> sous l'ensemble des articles
+lire la suite
+
+/article/id 
+
+créer dans front le composant Article 
+
+réaliser une requête appeler l'api l'article concerné 
