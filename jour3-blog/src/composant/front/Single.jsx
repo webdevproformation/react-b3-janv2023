@@ -1,4 +1,4 @@
-import {useParams} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 import {useEffect , useState} from "react"
 import axios from "axios";
 
@@ -16,7 +16,12 @@ const Single = () => {
     }, [])
 
     return ( <>
-        <h1>{article.titre}</h1>
+        <header className="d-flex justify-content-between align-items-center">
+            <h1>{article.titre}</h1>
+            <Link to={`/admin/article/update/${id}`} className="btn btn-success">
+                modifier l'article
+            </Link>
+        </header>
         <div className="row p-0">
             <div className="col-8 article_contenu" >
                 {article.contenu}
