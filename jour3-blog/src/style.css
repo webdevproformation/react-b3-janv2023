@@ -1,4 +1,4 @@
-td{
+td , .card-body{
     white-space:break-spaces;
     /* préserver les sauts de lignes dans les td*/
 }

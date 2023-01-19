@@ -15,7 +15,7 @@ const Home = () => {
     // requete ajax pour remplir le tableau vide 
     // effectuer une requête AJAX uniquement lors du chargement du composant
 
-    const articles = useArticle()
+    const [articles] = useArticle()
   
     return ( <div className="row">
         <h1>Bienvenu sur mon Blog</h1>
