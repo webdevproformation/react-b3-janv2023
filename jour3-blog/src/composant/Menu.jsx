@@ -29,6 +29,9 @@ function Menu() {
                         <NavLink to="/contact" className="nav-link">Contact</NavLink>
                     </li>
                     <li className="nav-item">
+                        <NavLink to="/cycle-vie" className="nav-link">Cycle vie</NavLink>
+                    </li>
+                    <li className="nav-item">
                         <NavLink to="/login" className="nav-link">Connexion</NavLink>
                     </li>
                 </ul>

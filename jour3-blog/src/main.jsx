@@ -8,6 +8,7 @@ import Contact from './composant/front/Contact';
 import Login from './composant/front/Login';
 import Dashboard from './composant/back/Dashboard';
 import FormArticle from './composant/back/article/FormArticle';
+import CycleVie from './composant/front/CycleVie';
 
 
 
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route index element={<Home />} />
           <Route path='contact' element={<Contact />} />
           <Route path="login" element={<Login />} />
+          <Route path="cycle-vie" element={<CycleVie />} />
           <Route path="admin">
             <Route index element={<Dashboard />} />
             <Route path="article"> 
