@@ -40,3 +40,17 @@ export const identifiantVerif = Joi.object({
 })
 
 // /^[^<>]*$/ accepter tous les caractères sauf les chevrons < > 
+
+// dans un fichier lorsque une variable par défaut est locale 
+const a = 30 ;
+
+// la variable articleVerif est local et aussi globale => je peux l'utiliser dans un autre fichier 
+// modules en javascript ES6 => comment partager des variables entre plusieurs fichiers 
+// createContext useContext => state globale ($_SESSION)
+
+// https://joi.dev/api
+export const articleVerif = Joi.object({
+    titre : Joi.string().min(4).max(200).regex(/^[^<>]*$/).required(),
+    contenu : Joi.string().min(4).max(10000).regex(/^[^<>]*$/).required(),
+    img  :  Joi.string().uri().required()
+})

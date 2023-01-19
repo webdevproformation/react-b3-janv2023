@@ -1,4 +1,5 @@
 import { useRef } from "react"
+import { articleVerif } from "../../../verif/liste"
 
 const FormArticle = () => {
     const titreRef = useRef();
@@ -10,10 +11,18 @@ const FormArticle = () => {
         e.preventDefault();
 
         // récupérer les valeurs saisies
+        const article = {
+            titre : titreRef.current.value ,
+            contenu : contenuRef.current.value,
+            img  :  imgRef.current.value 
+        }
+        console.log( article );
 
         // vérifier qu'elles sont conformes 
+        const { error } = articleVerif.validate(article , {abortEarly : false})
 
         // si non conforme => message en dessous du formulaire + STOP 
+        // rdv 10h50 @ toute suite !!
 
         // si ok => essayer d'envoyer à l'api les données pour enregistrement 
         // via ajax (axios)
