@@ -46,7 +46,7 @@ const Dashboard = () => {
                             <td><img src={article.img} alt="" width="60" /></td>
                             <td>{ article.commentaires ? Object.keys(article.commentaires).length : 0 }</td>
                             <td>
-                                <button className="btn btn-warning me-2">modifier</button>
+                                <Link className="btn btn-warning me-2" to={`/admin/article/update/${article.id}`}>modifier</Link>
                                 <button onClick={() => { handleSupprimer(article.id) }} className="btn btn-danger">supprimer</button>
                             </td>
                         </tr>
