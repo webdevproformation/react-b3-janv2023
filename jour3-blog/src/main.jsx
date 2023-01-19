@@ -24,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route index element={<Dashboard />} />
             <Route path="article"> 
               <Route path="add" element={<FormArticle />} />
+              <Route path="update/:id" element={<FormArticle />} />
             </Route>
           </Route>
         </Route>
