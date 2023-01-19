@@ -1,29 +1,21 @@
 import axios from "axios";
-import { useState } from "react";
 import {useRef} from "react"
 import { contactVerif } from "../../verif/liste";
 import Alert from "../Alert";
+import { useAlert } from "../../hook/useAlert";
 
 const Contact = () => {
     const emailRef = useRef();
     const messageRef = useRef();
-    const [ alerte , setAlerte ] = useState({})
+    const [alerte , setAlerte , getError] = useAlert(contactVerif)
     const handleSubmit = (e) => {
         e.preventDefault();
         const demande = {
             email : emailRef.current.value ,
             message : JSON.stringify(messageRef.current.value)
         }
-        // avant d'enregistrer des informations qui ont été saisie dans un formulaire , il FAUT OBLIGATOIREMENT les vérifier 
-        // pour vérifier que les données sont conformes => joi 
-        const {error} =  contactVerif.validate(demande , {abortEarly : false})
-        if(error) {
-            // gérer les messages d'erreur 
-            //console.log(error.details.map(m => m.type));
-            const messagesErreur = error.details.map(m => m.message);
-            setAlerte({ type : 'danger' , liste : messagesErreur });
-            return ; 
-        }
+        
+        if(getError(demande)) return ; 
         
         // envoyer les données saisies dans l'API pour enregistrement 
         axios.post(`${import.meta.env.VITE_API}contact.json`, demande)
