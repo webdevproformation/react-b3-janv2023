@@ -28,3 +28,8 @@ url => peut pas être vide et contenir un url valide
 vous allez effectuer l'enregistrement dans l'API 
 bandeau bravo c'est enregistré 
 
+------------
+
+cas numéro 2
+pouvez vous ajouter une action DELETE lorsque l'on clique sur le bouton supprimer du back office ! 
+

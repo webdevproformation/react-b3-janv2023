@@ -35,7 +35,8 @@ const FormArticle = () => {
                 setAlerte({type:"success", liste : ["article enregistré en bdd"]})
             })
             // si problème avec l'API => message probleme avec le serveur 
-            .catch(() => {
+            .catch((ex) => {
+                console.log(ex);
                 setAlerte({type:"warning" , liste : ["problème pour enregistrer l'article sur le serveur"]})
             })
         
