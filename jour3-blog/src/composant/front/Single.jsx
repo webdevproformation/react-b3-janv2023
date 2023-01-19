@@ -1,14 +1,21 @@
-import {Link, useParams} from "react-router-dom"
+import {Link, useParams , useNavigate} from "react-router-dom"
 import {useEffect , useState} from "react"
 import axios from "axios";
 
 const Single = () => {
     const {id} = useParams();
+    const navigate = useNavigate();
     const [article, setArticle] = useState({})
     useEffect( () => {
         if(id){
             axios.get(`${import.meta.env.VITE_API}articles/${id}.json`)
-            .then( reponse => setArticle(reponse.data) )
+            .then( reponse => {
+                if(reponse.data) return setArticle(reponse.data)
+                // si l'id saisit dans l'url ne correspond à aucun article en 
+                // base de données 
+                // redirection vers une page 404 Not Found 
+                navigate("/not-found")
+            })
             .catch((ex) => {
                 console.log(ex)
             })
