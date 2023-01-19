@@ -1,9 +1,8 @@
 import { useArticle } from "../../hook/useArticle";
-import { Link , useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import axios from "axios";
 
 const Dashboard = () => {
-    const navigate =  useNavigate()
     const [articles, setArticles] = useArticle()
 
     const handleSupprimer = (id) => {

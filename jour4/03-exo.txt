@@ -1,0 +1,7 @@
+CRUD => 
+Update 
+=> lorsque vous cliquez sur le bouton modifier afficher un formulaire 
+=> le même formulaire que ajouté => modifier 
+=> qu'il soit remplir avec les valeurs mises précédemment (stocké en base de données )
+=> 
+15h10 
