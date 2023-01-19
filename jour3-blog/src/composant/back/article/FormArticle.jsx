@@ -70,8 +70,6 @@ const FormArticle = () => {
                     setAlerte({type:"warning" , liste : ["problème pour enregistrer l'article sur le serveur"]})
                 })
         }
-        
-        
 
     }
     
