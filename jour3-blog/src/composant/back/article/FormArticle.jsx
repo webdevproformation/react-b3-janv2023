@@ -1,10 +1,13 @@
 import { useRef } from "react"
 import { articleVerif } from "../../../verif/liste"
+import { useAlert } from "../../../hook/useAlert";
+import axios from "axios";
 
 const FormArticle = () => {
     const titreRef = useRef();
     const contenuRef = useRef();
     const imgRef = useRef();
+    const [alerte, setAlerte, getError] = useAlert(articleVerif)
 
     const handleSubmit = (e) => {
         // bloquer le rechargement automatique de la page 
@@ -16,27 +19,26 @@ const FormArticle = () => {
             contenu : contenuRef.current.value,
             img  :  imgRef.current.value 
         }
-        console.log( article );
-
+       
         // vérifier qu'elles sont conformes 
-        const { error } = articleVerif.validate(article , {abortEarly : false})
-        
         // si non conforme => message en dessous du formulaire + STOP 
-        // rdv 10h50 @ toute suite !! Ctrl + Maj + fleche haut ou bas
-        if(error) {
-            // gérer les messages d'erreur 
-            // console.log(error.details.map(m => m.type));
-            const messagesErreur = error.details.map(m => m.message);
-            setAlerte({ type : 'danger' , liste : messagesErreur });
-            return ; 
-        }
+        if(getError(article)) return ; 
         
         // si ok => essayer d'envoyer à l'api les données pour enregistrement 
         // via ajax (axios)
+        axios.post(`${import.meta.env.VITE_API}articles.json`, article)
+            // si tout se passe bien => vider le formulaire et bandeau merci 
+            .then(() => {
+                // vider le formulaire
+                e.target.reset()
+                setAlerte({type:"success", liste : ["article enregistré en bdd"]})
+            })
+            // si problème avec l'API => message probleme avec le serveur 
+            .catch(() => {
+                setAlerte({type:"warning" , liste : ["problème pour enregistrer l'article sur le serveur"]})
+            })
         
-        // si tout se passe bien => vider le formulaire et bandeau merci 
 
-        // si problème avec l'API => message probleme avec le serveur 
     }
 
     return ( <>
