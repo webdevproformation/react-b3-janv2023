@@ -1,9 +1,18 @@
 import { useArticle } from "../../hook/useArticle";
-import { Link } from "react-router-dom"
+import { Link , useNavigate } from "react-router-dom"
+import axios from "axios";
 
 const Dashboard = () => {
-
+    const navigate =  useNavigate()
     const articles = useArticle()
+
+    const handleSupprimer = (id) => {
+        axios.delete(`${import.meta.env.VITE_API}articles/${id}.json`)
+             .then(() => {
+                navigate("/admin")
+             })
+    }
+    // rdv 13h40 
 
     return ( 
         <>
@@ -13,12 +22,14 @@ const Dashboard = () => {
             </div>
             <table className="table table-sm table-striped">
                 <thead>
-                    <th>id</th>
-                    <th>titre</th>
-                    <th>contenu</th>
-                    <th>img</th>
-                    <th>nb commentaires</th>
-                    <th>actions</th>
+                    <tr>
+                        <th>id</th>
+                        <th>titre</th>
+                        <th>contenu</th>
+                        <th>img</th>
+                        <th>nb commentaires</th>
+                        <th>actions</th>
+                    </tr>
                 </thead>
                 <tbody>
                     { articles.map((article) => {
@@ -30,7 +41,7 @@ const Dashboard = () => {
                             <td>{ article.commentaires ? Object.keys(article.commentaires).length : 0 }</td>
                             <td>
                                 <button className="btn btn-warning me-2">modifier</button>
-                                <button  className="btn btn-danger">supprimer</button>
+                                <button onClick={() => { handleSupprimer(article.id) }} className="btn btn-danger">supprimer</button>
                             </td>
                         </tr>
                     }) }

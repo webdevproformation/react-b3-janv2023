@@ -33,3 +33,11 @@ bandeau bravo c'est enregistré
 cas numéro 2
 pouvez vous ajouter une action DELETE lorsque l'on clique sur le bouton supprimer du back office ! 
 
+--- 
+cas pratique 
+créer un nouveau composant CycleVie 
+afficher un titre <h1>Cycle Vie</h1>
+
+ajouter dans la barre de menu => un nouveau lien
+Cycle Vie
+la page est accessible via l'adresse /cycle-vie
