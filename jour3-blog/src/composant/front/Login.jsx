@@ -2,6 +2,7 @@ import axios from "axios";
 import {useRef , useState} from "react"
 import { identifiantVerif } from "../../verif/liste";
 import { useNavigate } from "react-router-dom"
+import Alert from "../Alert"; 
 
 const Login = () => {
     const loginRef = useRef();
@@ -74,11 +75,7 @@ const Login = () => {
                 <input type="submit" className="btn btn-outline-dark btn-lg" value="connexion" />
             </div>
         </form>
-        { Object.keys(alerte).length > 0 && <div className={`alert alert-${alerte.type} mt-3`}>
-            {alerte.liste.map((a, index) => {
-                return <div key={index}>{a}</div>
-            })}
-        </div>}
+        <Alert alerte={alerte} />
     </> );
 }
  

@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import {useRef} from "react"
 import { contactVerif } from "../../verif/liste";
+import Alert from "../Alert";
+
 const Contact = () => {
     const emailRef = useRef();
     const messageRef = useRef();
@@ -54,11 +56,7 @@ const Contact = () => {
                    onFocus={handleFocus}></textarea>
             <input type="submit" className="btn btn-dark" />
         </form>
-        { Object.keys(alerte).length > 0 && <div className={`alert alert-${alerte.type} mt-3`}>
-            {alerte.liste.map((a, index) => {
-                return <div key={index}>{a}</div>
-            })}
-        </div>}
+        <Alert alerte={alerte} />
     </> );
 }
  

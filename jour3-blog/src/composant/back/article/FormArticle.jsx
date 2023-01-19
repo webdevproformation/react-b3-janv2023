@@ -20,13 +20,20 @@ const FormArticle = () => {
 
         // vérifier qu'elles sont conformes 
         const { error } = articleVerif.validate(article , {abortEarly : false})
-
+        
         // si non conforme => message en dessous du formulaire + STOP 
-        // rdv 10h50 @ toute suite !!
-
+        // rdv 10h50 @ toute suite !! Ctrl + Maj + fleche haut ou bas
+        if(error) {
+            // gérer les messages d'erreur 
+            // console.log(error.details.map(m => m.type));
+            const messagesErreur = error.details.map(m => m.message);
+            setAlerte({ type : 'danger' , liste : messagesErreur });
+            return ; 
+        }
+        
         // si ok => essayer d'envoyer à l'api les données pour enregistrement 
         // via ajax (axios)
-
+        
         // si tout se passe bien => vider le formulaire et bandeau merci 
 
         // si problème avec l'API => message probleme avec le serveur 
@@ -40,6 +47,7 @@ const FormArticle = () => {
             <input type="url" className="form-control mb-3" placeholder="url de l'image vedette" ref={imgRef} />
             <input type="submit" className="btn btn-dark"/>
         </form>
+        <Alert alerte={alerte} />
     </> );
 }
  
