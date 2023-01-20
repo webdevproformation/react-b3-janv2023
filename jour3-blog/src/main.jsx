@@ -15,6 +15,7 @@ import Single from './composant/front/Single';
 import NotFound from './composant/front/NotFound';
 import MentionLegale from './composant/front/MentionLegale';
 import Template from './composant/back/Template';
+import Users from './composant/back/users/Users';
 
 
 
@@ -34,6 +35,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="article"> 
               <Route path="add" element={<FormArticle />} />
               <Route path="update/:id" element={<FormArticle />} />
+            </Route>
+            <Route path="users">
+              <Route index element={<Users />} />
             </Route>
           </Route>
           {/** route à mettre en dernière position => route 404 */}
