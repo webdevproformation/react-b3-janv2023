@@ -4,3 +4,20 @@ MAIS qui ne sont pas Parent / Enfant
 pour partager des informations entre ces deux composants 
 
 => context == une session en PHP 
+
+
+créer une nouveau projet jour5-exo 
+
+créer dans ce projet react deux composants 
+Login 
+    formulaire avec deux champs login / password
+Menu
+    <connexion>
+
+créer session / contexte 
+    { login : "azerty", password : "123456" , isLogged : false }
+
+partager la session entre les deux composants Login et Menu 
+
+si l'utilisateur saisit les bons identifiants
+isLogged devient true et connexion devient le texte "bienvenu"  
