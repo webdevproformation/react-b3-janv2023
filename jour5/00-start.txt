@@ -12,3 +12,30 @@ barre de menu dans la back office
 login / logout 
 comment ajouter des images dans un projet react 
 mise en ligne (sur un hébergeur)
+
+
+logo et formes => svg 
+
+images beaucoup de couleur => taille de petite 
+png / jpg / gif 
+
+image de grande taille sans transparence => jpg 
+image de grande taille avec transparence => png  
+
+=> idéal pour site d'exemple 
+=> idéal pour des images qui sont mise une fois pour toute 
+
+=> si vous avez des images que vous devez laisser le client mettre à jour (modifier) 
+=> veuillez utiliser votre API pour stocker l'image 
+=> dans react vous utilisez l' url
+
+public => directement 
+src  => import et stocker dans une variable
+import image from "./image.jpg"
+utiliser la variable dans la balise <img src={image} alt="" />
+
+
+Cas pratique :  
+ajouter dans toutes les pages du site un footer 
+dans lequel vous allez mettre un lien vers une page mention légale
+créer la page mentions légales
