@@ -1,6 +1,16 @@
 td , .card-body , .article_contenu{
-    white-space:break-spaces;
-    /* préserver les sauts de lignes dans les td*/
+    white-space: break-spaces;
+    /* préserver les sauts de lignes dans les balises concernées*/
+}
+
+.mention-legale{
+    white-space: break-spaces;
+}
+
+.page{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }
 
 /*

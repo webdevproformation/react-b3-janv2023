@@ -13,6 +13,8 @@ import FormArticle from './composant/back/article/FormArticle';
 import CycleVie from './composant/front/CycleVie';
 import Single from './composant/front/Single';
 import NotFound from './composant/front/NotFound';
+import MentionLegale from './composant/front/MentionLegale';
+import Template from './composant/back/Template';
 
 
 
@@ -25,7 +27,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="login" element={<Login />} />
           <Route path="cycle-vie" element={<CycleVie />} />
           <Route path="article/:id" element={<Single />} />
-          <Route path="admin">
+          <Route path="mention-legale" element={<MentionLegale />} />
+          <Route path="admin" element={<Template />}> 
+                      {/** template imbriqué */}
             <Route index element={<Dashboard />} />
             <Route path="article"> 
               <Route path="add" element={<FormArticle />} />
