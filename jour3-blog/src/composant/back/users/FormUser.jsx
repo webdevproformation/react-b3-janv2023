@@ -23,7 +23,10 @@ const FormUser = () => {
         console.log(profil);
         // vérifier qu'un autre user ne dispose pas du même login 
         const {data} = await axios.get(`${import.meta.env.VITE_API}users.json`)
-        const users = [...data];
+        const users = [];
+        for(let key in data){
+            users.push({...data[key], id : key})
+        }
         const userRecherche = users.find( user => { return user.login === profil.login } )
 
         if(userRecherche) return setAlerte({type : "warning" , liste : ["l'email est déjà utilisé par un autre compte"]})
@@ -34,8 +37,13 @@ const FormUser = () => {
         profil.password = passwordHache ;
 
         console.log(profil);
-        
-        // post 
+        try{
+            await axios.post (`${import.meta.env.VITE_API}users.json` , profil)
+            setAlerte({type : "success" , liste : ["le profil est bien enregistré en bdd"]})
+        }catch(ex){
+            setAlerte({type : "danger" , liste : [`problème lors de la création du profil dans l'API - code erreur : ${ex.code} - message : ${ex.message} `]})
+        }
+        console.log("ici");
 
     }
  

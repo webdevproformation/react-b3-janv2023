@@ -4,6 +4,7 @@ import { identifiantVerif } from "../../verif/liste";
 import { useNavigate } from "react-router-dom"
 import Alert from "../Alert"; 
 import { useAlert } from "../../hook/useAlert"
+import bcrypt from "bcryptjs";
 
 const Login = () => {
     const loginRef = useRef();
@@ -25,8 +26,13 @@ const Login = () => {
         // requete ajax qui récupére l'ensemble des enregistrements de la table users 
         axios.get(`${import.meta.env.VITE_API}users.json`)
             .then( (reponse) => {
-                const recherche = reponse.data.find( profil => {
-                    return profil.login === identifiants.login && profil.password === identifiants.password
+                const users = [];
+                for(let key in reponse.data){
+                    users.push({...reponse.data[key], id : key})
+                }
+                const recherche = users.find( profil => {
+                    return profil.login === identifiants.login  && bcrypt.compareSync( identifiants.password , profil.password ) 
+                    
                 } )
                 if(recherche) {
                     setAlerte({type:"success" , liste : ["connexion réussie"]})
@@ -40,7 +46,7 @@ const Login = () => {
             }
             
             )
-            .catch(ex => setAlerte({type:"danger" , liste : ["problème avec l'API"]}))
+            .catch(ex => setAlerte({type:"danger" , liste : ["problème avec l'API - "+ ex.message]}))
 
         // parcourir comparer chaque enregistrement avec login / password 
         // si rien ne correspond => message => identifiants invalides
