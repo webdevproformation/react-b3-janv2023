@@ -12,6 +12,7 @@ import Dashboard from './composant/back/Dashboard';
 import FormArticle from './composant/back/article/FormArticle';
 import CycleVie from './composant/front/CycleVie';
 import Single from './composant/front/Single';
+import NotFound from './composant/front/NotFound';
 
 
 
@@ -32,7 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </Route>
           </Route>
           {/** route à mettre en dernière position => route 404 */}
-          <Route path="*" element={<>Page inconnue</>} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

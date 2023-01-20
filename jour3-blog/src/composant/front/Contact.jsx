@@ -3,6 +3,7 @@ import {useRef} from "react"
 import { contactVerif } from "../../verif/liste";
 import Alert from "../Alert";
 import { useAlert } from "../../hook/useAlert";
+import mario from "../../images/mario.png"
 
 const Contact = () => {
     const emailRef = useRef();
@@ -34,20 +35,26 @@ const Contact = () => {
     return ( <>
         <h1>Nous contacter</h1>
         <p>Besoin d'informations, veuillez compléter le formulaire suivant :</p>
-        <form onSubmit={handleSubmit}>
-            <input type="email" 
-                   placeholder="votre@email.fr"  
-                   className="form-control mb-3" 
-                   ref={emailRef}
-                   onFocus={handleFocus}/>
-            <textarea  
-                   placeholder="votre message" 
-                   className="form-control mb-3" 
-                   rows={5} 
-                   ref={messageRef}
-                   onFocus={handleFocus}></textarea>
-            <input type="submit" className="btn btn-dark" />
-        </form>
+        <div className="row">
+            <form onSubmit={handleSubmit} className="col-6">
+                <input type="email" 
+                    placeholder="votre@email.fr"  
+                    className="form-control mb-3" 
+                    ref={emailRef}
+                    onFocus={handleFocus}/>
+                <textarea  
+                    placeholder="votre message" 
+                    className="form-control mb-3" 
+                    rows={5} 
+                    ref={messageRef}
+                    onFocus={handleFocus}></textarea>
+                <input type="submit" className="btn btn-dark" />
+            </form>
+            <figure className="col-6">
+                <img src={mario} alt="" className="img-fluid img-thumbnail" />
+            </figure>
+        </div>
+        
         <Alert alerte={alerte} />
     </> );
 }
