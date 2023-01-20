@@ -31,6 +31,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="update/:id" element={<FormArticle />} />
             </Route>
           </Route>
+          {/** route à mettre en dernière position => route 404 */}
+          <Route path="*" element={<>Page inconnue</>} />
         </Route>
       </Routes>
     </BrowserRouter>
