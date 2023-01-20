@@ -1,11 +1,13 @@
 import {Link, useParams , useNavigate} from "react-router-dom"
-import {useEffect , useState} from "react"
+import {useEffect , useState , useContext} from "react"
 import axios from "axios";
+import { authContext } from "../../context/authContext";
 
 const Single = () => {
     const {id} = useParams();
     const navigate = useNavigate();
     const [article, setArticle] = useState({})
+    const {profil} = useContext(authContext);
     useEffect( () => {
         if(id){
             axios.get(`${import.meta.env.VITE_API}articles/${id}.json`)
@@ -25,9 +27,11 @@ const Single = () => {
     return ( <>
         <header className="d-flex justify-content-between align-items-center">
             <h1>{article.titre}</h1>
-            <Link to={`/admin/article/update/${id}`} className="btn btn-success">
-                modifier l'article
-            </Link>
+            {profil.isLogged && 
+                <Link to={`/admin/article/update/${id}`} className="btn btn-success">
+                    modifier l'article
+                </Link>
+            }
         </header>
         <div className="row p-0">
             <div className="col-8 article_contenu" >
