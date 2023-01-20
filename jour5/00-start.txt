@@ -39,3 +39,10 @@ Cas pratique :
 ajouter dans toutes les pages du site un footer 
 dans lequel vous allez mettre un lien vers une page mention légale
 créer la page mentions légales
+
+
+Créer le composant Users / tableau avec la liste des Utilisateurs dans la table users (de notre base )
+// colonne id / colonne login 
+// ajouter un bouton d'ajouter un nouveau profil utilisateur 
+
+// /admin/users

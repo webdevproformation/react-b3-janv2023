@@ -5,7 +5,7 @@ const Template = () => {
         <div className="row">
             <div className="col-3">
                 <h2>Espace de Gestion</h2>
-                <ul class="list-group">
+                <ul className="list-group">
                     <NavLink to="/admin" className={({isActive}) => {
                         return isActive ? "list-group-item active" : "list-group-item"
                     }} exact> gestion des articles </NavLink>
