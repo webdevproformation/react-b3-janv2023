@@ -46,3 +46,17 @@ Créer le composant Users / tableau avec la liste des Utilisateurs dans la table
 // ajouter un bouton d'ajouter un nouveau profil utilisateur 
 
 // /admin/users
+
+// dans le composant Users 
+réalisez une requete ajax via la librairie axios qui va récupérer l'ensemble des profils utilisateurs stockées dans la table users dans l'Api ?
+
+// cas pratique : 
+// créer un formulaire pour créer un nouveau profil utilisateur
+login et password 
+utiliser la vérification identifiantVerif et utiliser le composant Alerte qui affiche les messages d'erreur 
+
+// deuxième vérification => vérifiez se login saisit n'existe pas déjà 
+// si existe => le dire à l'utilisateur 
+
+// hashé le password via la librairie bcrypt 
+// axios.post 

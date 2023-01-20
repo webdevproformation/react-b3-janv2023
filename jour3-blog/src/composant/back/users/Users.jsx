@@ -1,8 +1,35 @@
 import { Link } from "react-router-dom";
-import { useState } from "react"
+import { useState , useEffect } from "react"
+import axios from "axios";
 
 const Users = () => {
     const [users, setUsers] = useState([])
+
+    // const a = { nom : "Alain" , age : 2}
+    // a.age
+    // const { age } = a
+    // age
+    // function test (p){
+    // p.largeur
+    //}
+
+    // function test ({largeur, hauteur}){
+    // largeur
+    //}
+    // test({largeur : 20 , hauteur : 10})
+
+
+    useEffect( () => {
+        axios.get(`${import.meta.env.VITE_API}users.json`)
+            .then( ({data}) => { 
+                const usersFromAPI = []
+                // { 0 : {} , 1 : {}} => [{},{}]
+                for(let key in data){
+                    usersFromAPI.push({...data[key] , id : key})
+                }
+                setUsers(usersFromAPI);
+             }) 
+    }, [] )
 
     return ( <>
         <header className="d-flex justify-content-between align-items-center mb-3">

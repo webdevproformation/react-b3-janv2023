@@ -1,0 +1,47 @@
+{
+  "articles": {
+    "-NM9H4p_UDezThSPxT19": {
+      "contenu": "how are you ??? \navec une modification\nplusieurs \nmise à jour\nre",
+      "img": "https://source.unsplash.com/random/400x201",
+      "titre": "Hello"
+    },
+    "-NM9IXKBWFFk8_WdMoYY": {
+      "contenu": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus ex quis urna lacinia finibus. Mauris ac sapien auctor, pellentesque tortor et, facilisis magna. Curabitur non libero vitae neque laoreet ullamcorper. Ut et eros bibendum, mattis velit in, hendrerit ex. Nam vulputate felis nisl, tincidunt pellentesque est elementum non. Ut sollicitudin auctor pharetra. Vivamus et venenatis nibh. Phasellus fringilla nisl ligula, non cursus tellus fermentum in. Aliquam blandit eleifend pharetra. Aliquam vel mollis lectus. Integer pulvinar lorem ac arcu fringilla, non congue nisi condimentum. Proin nunc est, tincidunt vel ligula at, pulvinar ultrices nisi. Donec nec elit nec lectus imperdiet ultrices ac quis neque. Proin tristique egestas sodales. Donec ac quam nec sapien suscipit pharetra quis id metus. Nulla et velit nisi.\n\nNunc quis commodo enim. Ut nulla mi, lobortis lacinia sollicitudin vel, mattis non nibh. Morbi auctor rutrum mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in nisl viverra, consequat justo at, dignissim nibh. Aliquam eu libero mollis, euismod lectus id, imperdiet sem. Sed et magna enim. Proin faucibus sit amet nibh eget semper. Maecenas eget ex sed risus viverra luctus. Duis porttitor metus nec tortor suscipit, ac auctor nulla maximus. In dignissim sem sit amet diam sollicitudin ullamcorper. Quisque iaculis quam et venenatis lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque mollis orci consectetur porttitor auctor. ",
+      "img": "https://source.unsplash.com/random/400x200",
+      "titre": "nouveau article"
+    },
+    "-NMDRwuTuiT4cRlyO4RS": {
+      "contenu": "Bonjour",
+      "img": "https://source.unsplash.com/random/400x200",
+      "titre": "Test"
+    }
+  },
+  "contact": {
+    "-NM42LIEEzOQAt29sDJT": {
+      "email": "toto@yahoo.fr",
+      "message": "un message\npour tester le formulaire"
+    },
+    "-NM46vR0FHLsCEmkHV5A": {
+      "email": "bravo@yahoo.fr",
+      "message": "hello les amis"
+    },
+    "-NM47-GQ_wy-FMu5ejUW": {
+      "email": "bravo@yahoo.fr",
+      "message": "Bravo 2\navec saut de ligne"
+    },
+    "-NM47B6Aabsk5TQgGxUQ": {
+      "email": "message@yahoo.fr",
+      "message": "\"avec\\nun \\nsaut de ligne\""
+    },
+    "-NM5fR4jBLCMx5YI50a2": {
+      "email": "kouibaatii@polywitch.com",
+      "message": "\"Trying out the form \""
+    }
+  },
+  "users": [
+    {
+      "login": "azerty@yahoo.fr",
+      "password": "Azerty1!"
+    }
+  ]
+}

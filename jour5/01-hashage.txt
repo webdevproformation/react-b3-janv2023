@@ -1,0 +1,26 @@
+
+fonction de hachage 
+"bonjour"    => md5 sha1 => "681768IBUYGUYF " haché / enprunte
+
+les fonctions de hachage ne marche que dans un seul sens 
+"681768IBUYGUYF "  => unmd5 => "bonjour"
+
+salt (grain de sel)
+
+"idezgnuyzgbonjourofezoizefhnu " => md5 sha1 => "ez,ohuzeiug"
+
+bcrypt.genSalt()
+bcrypt.hash() => enregistrer en base de données 
+bcrypt.compare( "claire", "mot de pass hashé" )
+
+
+
+--------------------
+
+chiffrage + clé  => https 
+
+"bonjour"    => "fozh,knfuzhuig"
+
+déchiffrage + clé 
+
+"fozh,knfuzhuig" => "bonjour"

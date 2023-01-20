@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const a = 10 ;
+
+        /* setTimeout(function(){
+                    const b = 30 ;
+                } , 1000) // ATTEND que setTimeout soit exécuté à 100%
+        console.log(a + b ) // erreur  */
+
+        function getB1(callback){
+            setTimeout(function(){
+                const b = 30 ;
+                callback(b)
+            } , 1000)
+        }
+
+        getB1((b) => console.log(a + b)); 
+
+        function getB(){
+            return new Promise(function(resolve){
+                setTimeout(function(){
+                    const b = 30 ;
+                    resolve(b)
+                } , 1000)
+            } )
+        }
+
+        // utilisation des Promises avec then() et catch()
+
+        getB ().then((b) => { console.log(a + b )}  )
+                .catch(ex => consoole.log(ex))
+
+        // autre manière de procéder await async
+
+        async function traitement (){ 
+            // async => attention dans cette fonction il y a des traitements qui ne sont pas instantanées
+            // toutes les lignes décorées avec le mot clé await 
+            try{
+                const b = await getB()
+                console.log(a + b )
+            }catch(ex){
+                console.log(ex);
+            }
+        }
+
+        traitement ()
+        
+
+    </script>
+</body>
+</html>
