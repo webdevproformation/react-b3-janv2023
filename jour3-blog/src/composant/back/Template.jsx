@@ -1,11 +1,18 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Template = () => {
     return ( 
         <div className="row">
             <div className="col-3">
-                Barre de menu Latérale
-
+                <h2>Espace de Gestion</h2>
+                <ul class="list-group">
+                    <NavLink to="/admin" className={({isActive}) => {
+                        return isActive ? "list-group-item active" : "list-group-item"
+                    }} exact> gestion des articles </NavLink>
+                    <NavLink to="/admin/users" className={({isActive}) => {
+                        return isActive ? "list-group-item active" : "list-group-item"
+                    }}> gestion des users </NavLink>
+                </ul>
             </div>
             <div className="col">
                 <Outlet />
