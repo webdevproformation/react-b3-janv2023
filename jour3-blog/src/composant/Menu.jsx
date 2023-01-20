@@ -1,7 +1,16 @@
 // sfc 
 // ffc
-import { NavLink } from "react-router-dom"
+import { NavLink , useNavigate } from "react-router-dom"
+import {useContext} from "react"
+import { authContext } from "../context/authContext";
 function Menu() {
+    const {profil , logout} = useContext(authContext);
+    const navigate = useNavigate()
+    const handleLogout = (e) => {
+        e.preventDefault();
+        logout()
+        navigate("/login")
+    }
     return ( 
         <div className="bg-primary mb-3">
             {/**
@@ -31,15 +40,20 @@ function Menu() {
                     <li className="nav-item">
                         <NavLink to="/cycle-vie" className="nav-link">Cycle vie</NavLink>
                     </li>
-                    <li className="nav-item">
-                        <NavLink to="/login" className="nav-link">Connexion</NavLink>
-                    </li>
+                    { !profil.isLogged  ?  
+                        <li className="nav-item">
+                            <NavLink to="/login" className="nav-link">Connexion</NavLink>
+                        </li> : 
+                        <li className="nav-item">
+                            <a href="#" className="nav-link" onClick={handleLogout}>Déconnexion</a>
+                        </li>
+                    }
                 </ul>
-                <ul className="navbar-nav ms-auto">
+                { profil.isLogged && <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
                         <NavLink to="/admin" className="nav-link">Admin</NavLink>
                     </li>
-                </ul>
+                </ul> }
             </nav>
         </div>
      );

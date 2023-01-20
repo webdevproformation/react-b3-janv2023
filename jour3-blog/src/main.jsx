@@ -18,9 +18,10 @@ import Template from './composant/back/Template';
 import Users from './composant/back/users/Users';
 import FormUser from './composant/back/users/FormUser';
 
-
+import { AuthContextProvider } from "./context/authContext";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <AuthContextProvider>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}>
@@ -47,5 +48,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Route>
       </Routes>
     </BrowserRouter>
- 
+    </AuthContextProvider>
 )

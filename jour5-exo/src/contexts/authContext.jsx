@@ -6,7 +6,7 @@ export const UserContextProvider = ({children}) => {
     if(localStorage.getItem("auth")) data = JSON.parse(localStorage.getItem("auth"))
 
     const [profil, setProfil] = useState(data)
-    
+
     const connexion = ({login, password}) => {
         if(profil.login === login && profil.password === password){
             const p = {...profil , isLogged : true}
@@ -22,3 +22,5 @@ export const UserContextProvider = ({children}) => {
         {children}
     </userContext.Provider>
 }
+
+// rdv 15h35 bon café !!!

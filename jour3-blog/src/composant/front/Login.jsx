@@ -1,16 +1,18 @@
 import axios from "axios";
-import {useRef } from "react"
+import { useRef , useContext } from "react"
 import { identifiantVerif } from "../../verif/liste";
 import { useNavigate } from "react-router-dom"
 import Alert from "../Alert"; 
 import { useAlert } from "../../hook/useAlert"
 import bcrypt from "bcryptjs";
+import { authContext } from "../../context/authContext";
 
 const Login = () => {
     const loginRef = useRef();
     const passwordRef = useRef();
     const navigate = useNavigate();
     const [alerte , setAlerte, getError ] = useAlert(identifiantVerif);
+    const {login} = useContext(authContext);
     
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -22,7 +24,7 @@ const Login = () => {
         if(getError(identifiants)) return ;
         
         // requete ajax pour récupérer les identifiants => si login et password existent => connecté sinon => erreur identifiants invalides
-        console.log(identifiants)
+        //console.log(identifiants)
         // requete ajax qui récupére l'ensemble des enregistrements de la table users 
         axios.get(`${import.meta.env.VITE_API}users.json`)
             .then( (reponse) => {
@@ -35,6 +37,7 @@ const Login = () => {
                 } )
                 if(recherche) {
                     setAlerte({type:"success" , liste : ["connexion réussie"]})
+                    login(identifiants)
                     setTimeout( ( ) => {
                         setAlerte({});
                         navigate("/admin"); // hook de redirection react-router-dom
