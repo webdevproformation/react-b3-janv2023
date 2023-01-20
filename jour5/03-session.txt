@@ -1,0 +1,6 @@
+si vous avez des composants qui sont frères / grands parents /
+MAIS qui ne sont pas Parent / Enfant 
+
+pour partager des informations entre ces deux composants 
+
+=> context == une session en PHP 

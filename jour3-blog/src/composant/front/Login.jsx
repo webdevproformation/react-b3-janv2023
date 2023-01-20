@@ -32,7 +32,6 @@ const Login = () => {
                 }
                 const recherche = users.find( profil => {
                     return profil.login === identifiants.login  && bcrypt.compareSync( identifiants.password , profil.password ) 
-                    
                 } )
                 if(recherche) {
                     setAlerte({type:"success" , liste : ["connexion réussie"]})
