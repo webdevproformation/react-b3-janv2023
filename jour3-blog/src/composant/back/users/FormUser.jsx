@@ -31,7 +31,6 @@ const FormUser = () => {
         // hashé le mot de passe de l'utilisation avant POST
         const salt = await bcrypt.genSalt(10)
         const passwordHache = await bcrypt.hash( profil.password ,salt );
-
         profil.password = passwordHache ;
 
         console.log(profil);
